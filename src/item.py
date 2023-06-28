@@ -16,7 +16,7 @@ class Item:
         self.name = name
         self.price = price
         self.quantity = quantity
-        self.all = all
+        # self.all = all
         # self.pay_rate = self.pay_rate
 
 
@@ -34,5 +34,7 @@ class Item:
         """
         return self.price * self.pay_rate
 
-
+    # def all(self):
+    #
+    #     return all.append(Item)
 
