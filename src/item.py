@@ -16,7 +16,7 @@ class Item:
         self.name = name
         self.price = price
         self.quantity = quantity
-        # self.all = all
+        Item.all.append(self)
         # self.pay_rate = self.pay_rate
 
 
