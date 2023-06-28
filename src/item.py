@@ -1,3 +1,6 @@
+from _pytest.nodes import Item
+
+
 class Item:
     """
     Класс для представления товара в магазине.
@@ -17,7 +20,6 @@ class Item:
         self.price = price
         self.quantity = quantity
         Item.all.append(self)
-        # self.pay_rate = self.pay_rate
 
 
     def calculate_total_price(self) -> float:
@@ -32,9 +34,6 @@ class Item:
         """
         Применяет установленную скидку для конкретного товара.
         """
-        return self.price * self.pay_rate
+        self.price = int(self.price * self.pay_rate)
 
-    # def all(self):
-    #
-    #     return all.append(Item)
 
