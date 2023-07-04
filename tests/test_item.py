@@ -15,3 +15,7 @@ def test_apply_discount(test_item):
     test_item.pay_rate = 0.5
     test_item.apply_discount()
     assert test_item.price == 50.0
+
+def test_calculate_total_price(test_item):
+    assert test_item.calculate_total_price() == 200.0
+
