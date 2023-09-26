@@ -1,4 +1,4 @@
-from _pytest.nodes import Item
+# from _pytest.nodes import Item
 
 
 class Item:
