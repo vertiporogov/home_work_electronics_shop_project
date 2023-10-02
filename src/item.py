@@ -25,6 +25,7 @@ class Item:
         self.__name = name
         self.price = price
         self.quantity = quantity
+        self.new_name = str
         Item.all.append(self)
 
     def calculate_total_price(self) -> float:
@@ -42,18 +43,19 @@ class Item:
         self.price = int(self.price * self.pay_rate)
 
     @property
-    def name(self):
+    def get_name(self):
         return self.__name
 
-    @name.setter
-    def name(self):
-        if len(self.name) > 10:
-            return self.name[:9]
-        return self.name
+    @get_name.setter
+    def get_name(self, name):
+        self.__name = name
+        if len(name) > 10:
+            return name[:9]
+        return name
 
     @classmethod
     def instantiate_from_csv(cls):
-        # list_devices = []
+        # hh = 'src/items.csv'
         with open('items.csv', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:

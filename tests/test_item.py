@@ -21,3 +21,7 @@ def test_calculate_total_price(test_item):
 
 def test_string_to_number(test_item):
     assert type(test_item.string_to_number('3')) == int
+
+def test_instantiate_from_csv(test_item):
+    test_item.instantiate_from_csv()
+    assert len(test_item.all) == 5
