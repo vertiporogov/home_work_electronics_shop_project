@@ -1,5 +1,6 @@
 # from _pytest.nodes import Item
 import csv
+# from pathlib import Path
 
 
 # list_devices = []
@@ -25,8 +26,7 @@ class Item:
         self.__name = name
         self.price = price
         self.quantity = quantity
-        self.new_name = str
-        Item.all.append(self)
+        # Item.all.append(self)
 
     def calculate_total_price(self) -> float:
         """
@@ -43,32 +43,34 @@ class Item:
         self.price = int(self.price * self.pay_rate)
 
     @property
-    def get_name(self):
-        return self.__name
-
-    @get_name.setter
-    def get_name(self, name):
-        self.__name = name
-        if len(name) > 10:
-            return name[:9]
+    def name(self):
+        name = self.__name
         return name
+    @name.setter
+    def name(self, new_name):
+        self.__name = new_name
+        if len(self.__name) < 10:
+            return self.__name[:9]
+        # new_name = self.name
+
+        # return self.__name
 
     @classmethod
     def instantiate_from_csv(cls):
-        # hh = 'src/items.csv'
-        with open('items.csv', encoding='utf-8') as f:
+        with open('../src/items.csv', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:
-                cls.name = row['name']
-                cls.price = row['price']
-                cls.quantity = row['quantity']
-                Item.all.append(cls)
-
-        return Item.all
+                cls.all.append(cls(row['name'], row['price'], row['quantity']))
+        #         cls.name = row['name']
+        #         cls.price = row['price']
+        #         cls.quantity = row['quantity']
+        #
+        # return cls(row['name'], row['price'], row['quantity'])
 
     @staticmethod
     def string_to_number(data_string):
-        return int(data_string)
+
+        return int(float(data_string))
 
 
 # print(Item.instantiate_from_csv())
