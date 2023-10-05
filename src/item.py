@@ -37,8 +37,7 @@ class Item:
 
     @property
     def name(self):
-        name = self.__name
-        return name
+        return self.__name
 
     @name.setter
     def name(self, new_name):
