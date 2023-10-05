@@ -19,3 +19,11 @@ def test_apply_discount(test_item):
 def test_calculate_total_price(test_item):
     assert test_item.calculate_total_price() == 200.0
 
+def test_string_to_number(test_item):
+    assert type(test_item.string_to_number('3')) == int
+    assert type(test_item.string_to_number('3.0')) == int
+    assert type(test_item.string_to_number('3.3')) == int
+
+def test_instantiate_from_csv(test_item):
+    test_item.instantiate_from_csv()
+    assert len(test_item.all) == 5
