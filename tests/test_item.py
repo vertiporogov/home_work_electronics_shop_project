@@ -8,6 +8,14 @@ def test_item():
     return Item('fff', 100.0, 2)
 
 
+def test_item_repr(test_item):
+    assert repr(test_item) == "Item('fff', 100.0, 2)"
+
+
+def test_item_str(test_item):
+    assert str(test_item) == 'fff'
+
+
 def test_item_init(test_item):
     assert test_item.name == 'fff'
     assert test_item.price == 100.0
@@ -18,7 +26,7 @@ def test_item_init(test_item):
 def test_apply_discount(test_item):
     test_item.pay_rate = 0.5
     test_item.apply_discount()
-    assert test_item.price == 50.0
+    assert test_item.price == 50
 
 
 def test_calculate_total_price(test_item):
