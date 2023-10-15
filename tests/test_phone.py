@@ -23,3 +23,10 @@ def test_item_repr(test_phone):
 
 def test_item_str(test_phone):
     assert str(test_phone) == 'aaa'
+
+
+def test_number_of_sim(test_phone):
+    assert test_phone.number_of_sim == 2
+
+    with pytest.raises(ValueError):
+        test_phone.number_of_sim = 0
