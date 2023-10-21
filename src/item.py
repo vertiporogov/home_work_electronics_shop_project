@@ -68,7 +68,7 @@ class Item:
         except FileNotFoundError:
             print(FileNotFoundError("Отсутствует файл item.csv"))
         except ValueError:
-           print(InstantiateCSVError('Файл item.csv поврежден'))
+            print(InstantiateCSVError('Файл item.csv поврежден'))
 
 
     @staticmethod
