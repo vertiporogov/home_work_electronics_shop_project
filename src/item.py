@@ -70,6 +70,8 @@ class Item:
         except ValueError:
             print(InstantiateCSVError('Файл item.csv поврежден'))
 
+        return cls.all
+
 
     @staticmethod
     def string_to_number(data_string):
