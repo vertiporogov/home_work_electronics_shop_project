@@ -57,11 +57,11 @@ class Item:
         self.__name = new_name[:10]
 
     @classmethod
-    def instantiate_from_csv(cls):
+    def instantiate_from_csv(cls, data='../src/items.csv'):
         """ Класс-метод, инициализирующий экземпляры класса `Item` данными из файла _src/items.csv """
         cls.all.clear()
         try:
-            with open('../src/items.csv', encoding='utf-8') as f:
+            with open(data, encoding='utf-8') as f:
                 reader = csv.DictReader(f)
                 for row in reader:
                     cls(row['name'], float(row['price']), int(row['quantity']))

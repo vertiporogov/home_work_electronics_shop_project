@@ -24,4 +24,4 @@ def test_instantiate_from_csv_not_found(test_item):
     """ Тест на проверку исключения при отсутствие файла"""
 
     with pytest.raises(FileNotFoundError):
-        test_item.instantiate_from_csv()
+        test_item.instantiate_from_csv('../src/new.csv')
