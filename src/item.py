@@ -66,11 +66,11 @@ class Item:
                 for row in reader:
                     cls(row['name'], float(row['price']), int(row['quantity']))
         except FileNotFoundError:
-            print(FileNotFoundError("Отсутствует файл item.csv"))
+            raise FileNotFoundError("Отсутствует файл items.csv")
         except ValueError:
-            print(InstantiateCSVError('Файл item.csv поврежден'))
+            raise InstantiateCSVError('Файл items.csv поврежден')
 
-        return cls.all
+
 
 
     @staticmethod
