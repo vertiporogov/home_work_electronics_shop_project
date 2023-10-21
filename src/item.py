@@ -70,9 +70,6 @@ class Item:
         except ValueError:
             raise InstantiateCSVError('Файл items.csv поврежден')
 
-
-
-
     @staticmethod
     def string_to_number(data_string):
         """Метод для изменения str на int"""
