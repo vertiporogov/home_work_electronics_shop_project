@@ -67,7 +67,7 @@ class Item:
                     cls(row['name'], float(row['price']), int(row['quantity']))
         except FileNotFoundError:
             raise FileNotFoundError("Отсутствует файл items.csv")
-        except ValueError:
+        except KeyError:
             raise InstantiateCSVError('Файл items.csv поврежден')
 
     @staticmethod
